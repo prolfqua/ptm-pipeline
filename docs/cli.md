@@ -66,7 +66,7 @@ The archive paths come from the project's `ptm_config.yaml`. Every archive is va
 
 `init` copies the Snakefile, `helpers.py` and `ptm.sh` into the project, and `run` uses those copies, so a new release reaches a project only when they are replaced. `ptm-pipeline update` does both halves:
 
-1. installs the pushed commits from GitHub: prolfqua, prolfquapp and protsea with pak, prophosqua with its report vignettes built, and ptm-pipeline itself with `uv tool install --reinstall git+https://github.com/wolski/ptm-pipeline`; a package already at its pushed commit is skipped
+1. installs the pushed commits from GitHub: prolfqua, prolfquapp and protsea with pak, prophosqua with its report vignettes built, and ptm-pipeline itself with `uv tool install --reinstall git+https://github.com/prolfqua/ptm-pipeline`; a package already at its pushed commit is skipped
 2. with the newly installed tool, replaces the project's Snakefile, `helpers.py` and `ptm.sh`; `ptm_config.yaml` is kept
 3. prints the jobs a run would now execute
 

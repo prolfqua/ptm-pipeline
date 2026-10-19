@@ -158,7 +158,7 @@ Import reads both DEA artifacts, written by prolfquapp 2.10.5 (schema 2.1.0), th
 
 ```bash
 # Install
-uv tool install git+https://github.com/wolski/ptm-pipeline
+uv tool install git+https://github.com/prolfqua/ptm-pipeline
 
 # Initialize and run
 cd /path/to/project_with_DEA_results
@@ -186,7 +186,7 @@ The rendered HTML reports are available as downloadable artifacts:
 | PTM_FP_LFQ_example | FragPipe label-free quantification |
 | PTM_BGS_Spectronaut_DIA_example | Spectronaut DIA quantification |
 
-**[Download latest test reports](https://github.com/wolski/ptm-pipeline/actions/workflows/ci.yml?query=branch%3Amain+is%3Asuccess)** -- click the latest successful run, then scroll to "Artifacts".
+**[Download latest test reports](https://github.com/prolfqua/ptm-pipeline/actions/workflows/ci.yml?query=branch%3Amain+is%3Asuccess)** -- click the latest successful run, then scroll to "Artifacts".
 
 ## Methods and References
 
@@ -196,7 +196,7 @@ See [R Package Dependencies](packages.md) for how the R packages the pipeline ca
 
 ## Links
 
-- [GitHub Repository](https://github.com/wolski/ptm-pipeline)
-- [Docker Image](https://github.com/wolski/ptm-pipeline/pkgs/container/ptm-pipeline-ci)
+- [GitHub Repository](https://github.com/prolfqua/ptm-pipeline)
+- [Docker Image](https://github.com/prolfqua/ptm-pipeline/pkgs/container/ptm-pipeline-ci)
 - [prolfqua](https://github.com/prolfqua/prolfqua) / [prolfquapp](https://github.com/prolfqua/prolfquapp)
 - [prophosqua](https://github.com/prolfqua/prophosqua)

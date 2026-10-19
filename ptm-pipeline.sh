@@ -14,12 +14,12 @@
 #
 # Options:
 #   --image-version VERSION  Image tag (default: latest)
-#   --image-repo REPO        Image repository (default: ghcr.io/wolski/ptm-pipeline-ci)
+#   --image-repo REPO        Image repository (default: ghcr.io/prolfqua/ptm-pipeline-ci)
 
 set -euo pipefail
 
 IMAGE_VERSION="0.3.0"
-IMAGE_REPO="ghcr.io/wolski/ptm-pipeline-ci"
+IMAGE_REPO="ghcr.io/prolfqua/ptm-pipeline-ci"
 
 usage() {
     echo "Usage: $0 [--image-version VERSION] [--image-repo REPO] [ptm-pipeline args...]"

@@ -1,6 +1,6 @@
 # PTM Pipeline
 
-**[Documentation & Example Reports](https://wolski.github.io/ptm-pipeline)** | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18349420.svg)](https://doi.org/10.5281/zenodo.18349420)
+**[Documentation & Example Reports](https://prolfqua.github.io/ptm-pipeline)** | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18349420.svg)](https://doi.org/10.5281/zenodo.18349420)
 
 Deploy phosphoproteomics PTM analysis pipeline to new projects.
 
@@ -8,7 +8,7 @@ Deploy phosphoproteomics PTM analysis pipeline to new projects.
 
 ```bash
 # Install from GitHub
-uv tool install git+https://github.com/wolski/ptm-pipeline
+uv tool install git+https://github.com/prolfqua/ptm-pipeline
 
 # Install from a local checkout (after code changes, use --force --reinstall)
 uv tool install --force --reinstall /path/to/ptm-pipeline
@@ -118,7 +118,7 @@ Options:
 | Flag | Description |
 |------|-------------|
 | `--image-version VERSION` | Image tag (default: `0.3.0`) |
-| `--image-repo REPO` | Image repository (default: `ghcr.io/wolski/ptm-pipeline-ci`) |
+| `--image-repo REPO` | Image repository (default: `ghcr.io/prolfqua/ptm-pipeline-ci`) |
 
 ## Configuration
 
@@ -138,7 +138,7 @@ PTM report templates are resolved from the installed `prophosqua` package via
 ## Development
 
 ```bash
-git clone https://github.com/wolski/ptm-pipeline
+git clone https://github.com/prolfqua/ptm-pipeline
 cd ptm-pipeline
 uv sync
 uv run ptm-pipeline --help

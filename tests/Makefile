@@ -11,7 +11,7 @@
 # Docker integration tests:
 #   make docker-build                  - build image from ../Dockerfile
 #   make docker-test                   - full Docker test (unzip + init + run + verify)
-#   make docker-test IMAGE_REPO=ghcr.io/wolski/ptm-pipeline-ci IMAGE_VERSION=0.3.0
+#   make docker-test IMAGE_REPO=ghcr.io/prolfqua/ptm-pipeline-ci IMAGE_VERSION=0.3.0
 
 DATA_DIR   := data
 ZIPS       := $(wildcard $(DATA_DIR)/*.zip)

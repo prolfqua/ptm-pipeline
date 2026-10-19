@@ -150,8 +150,8 @@ Input data is preprocessed by prolfquappPTMReaders, which standardizes site-leve
 - Versioned on GitHub and archived on Zenodo
 - Example reports available from CI artifacts
 
-GitHub: https://github.com/wolski/ptm-pipeline
+GitHub: https://github.com/prolfqua/ptm-pipeline
 
-Docs: https://wolski.github.io/ptm-pipeline
+Docs: https://prolfqua.github.io/ptm-pipeline
 
 DOI: 10.5281/zenodo.18349420

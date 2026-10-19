@@ -10,7 +10,7 @@ from .init import copy_template_files
 
 console = Console()
 
-REPOSITORY = "git+https://github.com/wolski/ptm-pipeline"
+REPOSITORY = "git+https://github.com/prolfqua/ptm-pipeline"
 R_UPDATE = Path(__file__).with_name("update_r_packages.R")
 
 

@@ -44,7 +44,7 @@ RUN uv tool install snakemake
 RUN uv tool install "kinase-library @ git+https://github.com/wolski/kinase-library"
 # Cache-bust ARG: pass --build-arg PTM_VERSION=<commit> to force re-install
 ARG PTM_VERSION=latest
-RUN uv tool install "ptm-pipeline @ git+https://github.com/wolski/ptm-pipeline"
+RUN uv tool install "ptm-pipeline @ git+https://github.com/prolfqua/ptm-pipeline"
 
 # Verify critical packages are loadable
 RUN R -e "library(prolfqua); library(prolfquapp); library(prophosqua); library(clusterProfiler); message('All R packages OK')"

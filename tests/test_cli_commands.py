@@ -171,7 +171,7 @@ def test_update_installs_pushed_commits_then_refreshes_with_the_new_tool(tmp_pat
     commands = [call.args[0] for call in execute.call_args_list]
     assert commands[0][:2] == ["Rscript", "--vanilla"]
     assert commands[0][2].endswith("update_r_packages.R")
-    assert commands[1] == ["uv", "tool", "install", "--reinstall", "git+https://github.com/wolski/ptm-pipeline"]
+    assert commands[1] == ["uv", "tool", "install", "--reinstall", "git+https://github.com/prolfqua/ptm-pipeline"]
     assert commands[2] == ["/bin/ptm-pipeline", "update", str(project), "--no-install"]
 
 
