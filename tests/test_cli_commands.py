@@ -159,23 +159,7 @@ def test_template_copy_does_not_create_a_makefile(tmp_path):
     assert not (tmp_path / "Makefile").exists()
 
 
-def test_update_installs_pushed_commits_then_refreshes_with_the_new_tool(tmp_path):
-    project = initialized_project(tmp_path)
-    with (
-        patch("ptm_pipeline.update.subprocess.run") as execute,
-        patch("ptm_pipeline.update.shutil.which", return_value="/bin/ptm-pipeline"),
-    ):
-        execute.return_value.returncode = 0
-        update(project)
-
-    commands = [call.args[0] for call in execute.call_args_list]
-    assert commands[0][:2] == ["Rscript", "--vanilla"]
-    assert commands[0][2].endswith("update_r_packages.R")
-    assert commands[1] == ["uv", "tool", "install", "--reinstall", "git+https://github.com/prolfqua/ptm-pipeline"]
-    assert commands[2] == ["/bin/ptm-pipeline", "update", str(project), "--no-install"]
-
-
-def test_update_without_install_refreshes_the_files_and_keeps_the_config(tmp_path):
+def test_update_refreshes_the_files_and_keeps_the_config(tmp_path):
     project = initialized_project(tmp_path)
     config = (project / "ptm_config.yaml").read_text()
     with (
@@ -183,7 +167,7 @@ def test_update_without_install_refreshes_the_files_and_keeps_the_config(tmp_pat
         patch("ptm_pipeline.cli.subprocess.run") as execute,
     ):
         execute.return_value.returncode = 0
-        update(project, install=False)
+        update(project)
 
     copy.assert_called_once_with(project.resolve())
     assert execute.call_args.args[0][-1] == "--dry-run"
@@ -191,7 +175,7 @@ def test_update_without_install_refreshes_the_files_and_keeps_the_config(tmp_pat
 
 
 def test_update_refuses_a_directory_that_is_not_a_project(tmp_path):
-    with patch("ptm_pipeline.update.subprocess.run") as execute, pytest.raises(SystemExit):
+    with patch("ptm_pipeline.cli.subprocess.run") as execute, pytest.raises(SystemExit):
         update(tmp_path)
     execute.assert_not_called()
 

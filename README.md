@@ -38,7 +38,7 @@ ptm-pipeline run     # Run the complete pipeline
 | `ptm-pipeline run stats [DIR] [-j CORES]` | Stop after `PTM_statistics.h5mu`; no enrichment, no reports |
 | `ptm-pipeline run gsea [DIR] [-j CORES]` | Stop after `PTM_results.h5mu` and its enrichment artifacts; no reports |
 | `ptm-pipeline run dry [DIR] [--target TARGET]` | Show a target's jobs without executing them; `TARGET` is `all` (default), `stats` or `gsea` |
-| `ptm-pipeline update [DIR] [--no-install]` | Install the pushed commits of ptm-pipeline and its R packages from GitHub, refresh the project's Snakefile, helpers.py and ptm.sh, and show the jobs a run would execute |
+| `ptm-pipeline update [DIR]` | Refresh the project's Snakefile, helpers.py and ptm.sh from the installed tool, and show the jobs a run would execute |
 | `ptm-pipeline upload [DIR]` | Upload a full run's archives to the order in `bfabric_upload.yaml` (written by `init`), one workunit each: `ptm_pipeline_<name>` to application 431, `proptm3d_<name>` to 434, `DEA_enriched_<name>`, `DEA_total_<name>` and `DEA_total_peptide_<name>` to 438 |
 | `ptm-pipeline clean [DIR]` | Remove outputs declared by Snakemake, preserving initialization files |
 | `ptm-pipeline clean init [DIR]` | Remove initialization files, preserving outputs |

@@ -28,7 +28,7 @@ from . import bfabric_upload
 from .clean import clean_project, output_directory
 from .config import read_upload_target
 from .init import init_project
-from .update import install_pushed_commits, refresh_project, rerun_refresh
+from .update import refresh_project
 
 console = Console()
 
@@ -299,19 +299,10 @@ def update(
     directory: Annotated[
         Path, cyclopts.Parameter(help="Initialized project directory")
     ] = Path("."),
-    *,
-    install: Annotated[
-        bool,
-        cyclopts.Parameter(help="Install the pushed commits before refreshing the project"),
-    ] = True,
 ) -> None:
-    """Install the pushed commits of ptm-pipeline and its R packages, refresh the project's
-    Snakefile, helpers.py and ptm.sh, and show the jobs a run would execute."""
+    """Refresh the project's Snakefile, helpers.py and ptm.sh from the installed tool, and
+    show the jobs a run would execute."""
     _snakemake_command(directory, "all")
-    if install:
-        install_pushed_commits()
-        rerun_refresh(directory)
-        return
     refresh_project(directory.resolve())
     _execute(directory, flag="--dry-run")
 
