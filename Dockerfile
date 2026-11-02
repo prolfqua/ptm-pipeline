@@ -8,7 +8,7 @@
 #   docker run --rm -v $(pwd):/work -w /work ptm-pipeline \
 #     bash -c "cd test_data/PTM_example_FP_TMT && snakemake -s Snakefile --configfile ptm_config.yaml -j1 all"
 
-FROM docker.io/prolfqua/prolfquapp:2.0.10
+FROM ghcr.io/prolfqua/prolfquapp:2.11.1
 
 # System dev libs needed to compile R packages from source
 RUN apt-get update && apt-get install -y --no-install-recommends \
